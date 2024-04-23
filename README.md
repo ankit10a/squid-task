@@ -13,9 +13,11 @@ npm install
 
 -Start your MYSQL server
 
+```
 -Orm configuration
  pirsma orm used for db connection. To more go to official website(https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-mysql)
 
+```
 
 -db configuration
 ```
@@ -37,6 +39,18 @@ npx prisma
 npx prisma init
 
 npx prisma migrate dev --name  init
+
+
+#Environment
+for dev 
+```
+npm run dev
+```
+for produciton 
+
+```
+npm start
+```
 
 
 
