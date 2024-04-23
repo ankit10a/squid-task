@@ -34,8 +34,11 @@ class Businesses_Service {
         if(type){
             queryBuilder = queryBuilder + ` where type = "${type}" `
         }
+
             queryBuilder  = queryBuilder + ` order by distance `
+        if(limit){
             queryBuilder = queryBuilder + ` limit ${limit} `
+        }
 
             // console.log(queryBuilder)
 

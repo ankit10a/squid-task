@@ -1,5 +1,6 @@
 import { Response, Request} from "express";
 import businessService from "../service/businessService";
+import { IBusinessInfo } from "../types/businesses.type";
 
 class BusinessInfoController {
     public static instance: BusinessInfoController;
@@ -14,9 +15,14 @@ class BusinessInfoController {
 
     async getBusinessInfo (req:Request,res:Response) {
         const {lat, long, limit,type} = req.query;
-        try {          
-            const result = await businessService.getBusinesses({lat, long, limit,type});
-            console.log(result)
+        try {      
+            if(!lat || !long){
+                return res.status(400).send({
+                    msg:"latitude and longitude is required"
+                })
+            }   
+            const result : IBusinessInfo[] | unknown = await businessService.getBusinesses({lat, long, limit,type});
+            // console.log(result)
             res.status(200).send({
                 result
             })
