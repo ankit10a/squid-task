@@ -20,6 +20,10 @@ class BusinessInfoController {
                 return res.status(400).send({
                     msg:"latitude and longitude is required"
                 })
+            }else if(isNaN(Number(lat)) || isNaN(Number(long))){
+                return res.status(400).send({
+                    msg:"latitude and longitude should be number"
+                })
             }   
             const result : IBusinessInfo[] | unknown = await businessService.getBusinesses({lat, long, limit,type});
             // console.log(result)
