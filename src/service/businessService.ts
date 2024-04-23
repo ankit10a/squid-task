@@ -28,7 +28,7 @@ class Businesses_Service {
         // console.log(lat, long, limit,type)
 
         let queryBuilder:string = `SELECT name, latitude, longitude, 
-        (3959 * acos(cos(radians(${lat})) * 
+        (6371 * acos(cos(radians(${lat})) * 
          cos(radians(latitude)) * cos(radians(longitude) - radians(${long})) + 
          sin(radians(${lat})) * sin(radians(latitude)))) AS distance 
         FROM businesses
