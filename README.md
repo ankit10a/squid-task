@@ -1,4 +1,12 @@
-<h1>Getting Started </h1>
+# Getting started
+- Clone the repository
+```
+git clone https://github.com/ankit10a/squid-task.git
+
+```
+-Intsall dependencies 
+```
+npm install
 
 
 
