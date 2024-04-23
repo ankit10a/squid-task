@@ -1,4 +1,5 @@
 import { Response, Request} from "express";
+import businessService from "../service/businessService";
 
 class BusinessInfoController {
     public static instance: BusinessInfoController;
@@ -12,10 +13,17 @@ class BusinessInfoController {
     }
 
     async getBusinessInfo (req:Request,res:Response) {
-        console.log("request")
-        return res.status(200).json({
-            "msg":'fo'
-        })
+        const {lat, long, limit,type} = req.query;
+        try {          
+            const result = await businessService.getBusinesses({lat, long, limit,type});
+            console.log(result)
+            res.status(200).send({
+                result
+            })
+        } catch (error) {
+            console.error(error)
+            res.status(500).json({ message: 'Error fetching businesses' });
+        }
     }
 }
 

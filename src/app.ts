@@ -2,11 +2,12 @@ import bodyParser from "body-parser";
 import express from "express";
 import path from "path"
 import router from "./routes";
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
 
 // database
-
+export const prismaClient = new PrismaClient()
 
 
 app.use(bodyParser.json());
