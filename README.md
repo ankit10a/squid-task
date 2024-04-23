@@ -3,6 +3,7 @@
 - [Database configuration](#database-configuration)
 - [Environment ](#enivronment)
 - [EndPoint(API_URL)](#endpointapi_url)
+- [Build and run the project](#build-and-run)
 
 
 # Getting started
@@ -27,28 +28,36 @@ npm install
  pirsma orm used for db connection. To more go to official website(https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-mysql)
 
 
-<!-- # Database configuration
+# Database Confiuration
 
-```bash
-# Connection paramertes
-#The name of your database user
-USER 
-#The password for your database user
-PASSWORD 
+generic
 
-HOST: The name of your host name (for the local environment, it is localhost)
+```
+   DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"  
 
-PORT: The port where your database server is running (typically 5432 for PostgreSQL)
+```
 
-DATABASE: The name of the database
+``` 
+# root or admin name
+  User = username
+# In this project mysql is used 
+  database = msql
+#password 
+  password = 123pass
+#host
+  host = localhost
+#port
+  port = 3302
+#schema
+  schema = abc
 
-SCHEMA: The name of the schema inside the database
+# DBURL
+  Url = "mysql://username:123pass@localhost:3302/mydb?schema=abc
 
-# convert your db configuration into URL format
-DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public" 
-# put on .env file
+  DBURL = "{databaseEngine}://{username}:{password}@{host}:{port}/mydb?schema={schema_name}
 
-```bash -->
+```
+ generate URL and put on .env file for the database connection
 
 
 # Migration 
@@ -82,7 +91,7 @@ example
 http://localhost:3000/api/v1/discovery?lat=40.7128&long=-74.006&limit=2&type=Restaurant
 ```
 
-- Build and run the project
+# Build and run the project
 ```
 npm run build
 npm run serve
