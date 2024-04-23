@@ -1,3 +1,4 @@
+import { IGetBusinessesParams } from "../types/businesses.type";
 import { prismaClient } from "../app";
 
 
@@ -18,10 +19,11 @@ class Businesses_Service {
     * @param lat
     * @param long
     * @param limit
+    * @param type
  */
    
 
-    public getBusinesses({lat, long, limit,type}:any){
+    public getBusinesses({lat, long, limit,type}:IGetBusinessesParams){
 
         // console.log(lat, long, limit,type)
 

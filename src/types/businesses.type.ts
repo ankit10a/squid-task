@@ -1,7 +1,10 @@
 
-export interface queryParams{
-    lat:number, long:number, limit:number,type:string|null
-}
+export interface IGetBusinessesParams {
+    lat: number;
+    long: number;
+    limit?: number;
+    type?: string;
+  }
 
 export interface IBusinessInfo{
         name: string,

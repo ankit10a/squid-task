@@ -1,6 +1,6 @@
 import { Response, Request} from "express";
 import businessService from "../service/businessService";
-import { IBusinessInfo } from "../types/businesses.type";
+import { IBusinessInfo, IGetBusinessesParams } from "../types/businesses.type";
 
 class BusinessInfoController {
     public static instance: BusinessInfoController;
@@ -24,8 +24,14 @@ class BusinessInfoController {
                 return res.status(400).send({
                     msg:"latitude and longitude should be number"
                 })
-            }   
-            const result : IBusinessInfo[] | unknown = await businessService.getBusinesses({lat, long, limit,type});
+            }  
+            const obj : IGetBusinessesParams = {
+                lat:Number(lat),
+                long:Number(long),
+                limit:Number(limit),
+                type:String(type)
+            }
+            const result : IBusinessInfo[] | unknown = await businessService.getBusinesses(obj);
             // console.log(result)
             res.status(200).send({
                 result
