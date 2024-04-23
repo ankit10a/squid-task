@@ -9,15 +9,15 @@ git clone https://github.com/ankit10a/squid-task.git
 cd <project_name>
 npm install
 
-- Configure your MYSQL server
+-Configure your MYSQL server
 
-- Start your MYSQL server
+-Start your MYSQL server
 
-- Orm configuration
+-Orm configuration
  pirsma orm used for db connection. To more go to official website(https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-mysql)
 
 
-- db configuration
+-db configuration
 ```
 USER: The name of your database user
 PASSWORD: The password for your database user
@@ -31,7 +31,8 @@ DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=pub
 
 and put on .env file
 
-- Migration 
+-Migration 
+```
 npx prisma
 npx prisma init
 
