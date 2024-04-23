@@ -62,11 +62,11 @@ npx prisma migrate dev --name  init
 
 
 # Environment
-- for dev 
+- For development 
 ```
 npm run dev
 ```
-for produciton 
+- For produciton 
 
 ```
 npm start
@@ -85,7 +85,12 @@ http://localhost:3000/api/v1/discovery?lat=40.7128&long=-74.006&limit=2&type=Res
 - Build and run the project
 ```
 npm run build
+npm run serve
+```
+or 
+```
 npm start
+
 ```
 
 
