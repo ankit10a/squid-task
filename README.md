@@ -52,7 +52,15 @@ for produciton
 npm start
 ```
 
-
+#EndPoint(API_URL) 
+generic 
+```
+http://localhost:3000/api/v1/discovery?lat=x&long=y&limit=z&type=k
+```
+example 
+```
+http://localhost:3000/api/v1/discovery?lat=40.7128&long=-74.006&limit=2&type=Restaurant
+```
 
 
 
