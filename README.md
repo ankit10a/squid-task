@@ -28,7 +28,7 @@ npm install
  pirsma orm used for db connection. To more go to official website(https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-mysql)
 
 
-# Database Confiuration
+# Database Configuration
 
 generic
 
@@ -41,7 +41,7 @@ generic
 # root or admin name
   User = username
 # In this project mysql is used 
-  database = msql
+  database = mysql
 #password 
   password = 123pass
 #host
