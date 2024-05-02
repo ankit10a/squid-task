@@ -29,7 +29,10 @@ class BusinessInfoController {
                 lat:Number(lat),
                 long:Number(long),
                 limit:Number(limit),
-                type:String(type)
+                // type: type ? String(type): null
+            }
+            if (type && typeof type != undefined){
+                obj.type = String(type)
             }
             const result : IBusinessInfo[] | unknown = await businessService.getBusinesses(obj);
             // console.log(result)
